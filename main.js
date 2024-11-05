@@ -30,3 +30,9 @@ console.table(
         return `${name} (${name.length})`;
     })
 );
+
+
+// Sorting
+console.table(
+    provinces.toSorted()    // Using toSorted instead of 'sort' to avoid mutating the orginal Array
+);
