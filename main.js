@@ -81,3 +81,19 @@ console.log(
         return product.product.length < 6;
     })
 );
+
+
+// Price manipulation
+console.log(
+    products
+    .filter(product => {
+        return product.price > 0;       // truthy testing -> coercion to numbers
+    })
+    .map(product => {
+        return Number.parseInt(product.price);
+    })
+    .reduce(
+        (sum, value) => sum += value,   // Adding function
+        0                               // Initial Value
+    )
+);
