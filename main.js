@@ -129,3 +129,19 @@ console.log(
     .shift().product                    // Shift to get the lowest
 }.`
 );
+
+
+// Object transformation
+console.log(
+    products.map(product => {                             // Do this for each object, make a new Array
+        return Object.entries(product).reduce(            // Reduce the "entries" Array to a single object
+            (obj, [key, value]) => {                      // Destructure keys and values
+                if (key==="product") obj.name = value;    // Set "product" to "name"
+                if (key==="price") obj.cost = value;      // Set "price" to "cost"
+
+                return obj;                               // Return this modified object
+            },
+            new Object()                                  // Start "reduce" with a fresh object
+        )
+    })
+);
