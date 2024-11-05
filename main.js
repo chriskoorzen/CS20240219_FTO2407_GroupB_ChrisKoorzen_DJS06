@@ -23,3 +23,10 @@ console.table(
     })
 );
 
+
+// name lengths
+console.table(
+    names.map(name => {
+        return `${name} (${name.length})`;
+    })
+);
