@@ -36,3 +36,11 @@ console.table(
 console.table(
     provinces.toSorted()    // Using toSorted instead of 'sort' to avoid mutating the orginal Array
 );
+
+
+// Filter out "cape"
+console.table(
+    provinces.filter(province => {
+        return !(province.toLowerCase().includes("cape"));
+    })
+);
