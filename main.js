@@ -14,3 +14,12 @@ names.forEach(name => {
 names.forEach((name, index) => {
     console.log(`${name} (${provinces[index]})`)
 });
+
+
+// uppercase transform
+console.table(
+    provinces.map(province => {
+        return province.toUpperCase();
+    })
+);
+
