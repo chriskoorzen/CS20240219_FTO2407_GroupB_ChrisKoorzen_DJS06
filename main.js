@@ -44,3 +44,13 @@ console.table(
         return !(province.toLowerCase().includes("cape"));
     })
 );
+
+
+// Finding "S"
+// ** brief unclear -> Array.protoype.some() returns a single Boolean. Brief requests a boolean Array.
+// ** use of .some() ignored.
+console.table(
+    names.map(name => {
+        return name.includes("S");
+    })
+);
