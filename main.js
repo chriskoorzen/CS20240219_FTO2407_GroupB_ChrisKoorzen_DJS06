@@ -54,3 +54,12 @@ console.table(
         return name.includes("S");
     })
 );
+
+
+// Reduce into object
+console.table(
+    names.reduce((obj, name, index) => {
+        obj[name] = provinces[index];
+        return obj;
+    }, new Object())
+);
