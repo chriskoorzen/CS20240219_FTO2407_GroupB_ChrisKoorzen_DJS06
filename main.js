@@ -73,3 +73,11 @@ console.table(
 console.log(
     products.map(product => product.product)
 );
+
+
+// Filter names longer than 5
+console.log(
+    products.filter(product => {
+        return product.product.length < 6;
+    })
+);
