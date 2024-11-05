@@ -27,7 +27,7 @@ console.table(
 // name lengths
 console.table(
     names.map(name => {
-        return `${name} (${name.length})`;
+        return `${name} (${name.length})`;  // Keep name and length, to easily compare results.
     })
 );
 
@@ -71,7 +71,7 @@ console.table(
 
 // Log product names
 console.log(
-    products.map(product => product.product)
+    products.map(product => product.product)        // Create a new Array with only names, log.
 );
 
 
@@ -87,14 +87,14 @@ console.log(
 console.log(
     products
     .filter(product => {
-        return product.price > 0;       // truthy testing -> coercion to numbers
+        return product.price > 0;                   // truthy testing -> coercion to numbers
     })
     .map(product => {
-        return Number.parseInt(product.price);
+        return Number.parseInt(product.price);      // Get Array with only numbers, force to Int type.
     })
     .reduce(
-        (sum, value) => sum += value,   // Adding function
-        0                               // Initial Value
+        (sum, value) => sum += value,               // Adding function
+        0                                           // Initial Value
     )
 );
 
@@ -108,26 +108,26 @@ console.log(
 // Find highest and lowest priced products
 console.log(
     `Highest: ${
-    products
-    .filter(product => {                // Ignore non-priced items
-        return product.price > 0;       // truthy testing -> coercion to numbers
-    })
-    .toSorted((a, b)=> {
-        // The default sorting algorithm, modified for these specific objects
-        return Number.parseInt(a.price) - Number.parseInt(b.price)
-    })
-    .pop().product                      // pop to get the highest
+        products
+        .filter(product => {                // Ignore non-priced items
+            return product.price > 0;       // truthy testing -> coercion to numbers
+        })
+        .toSorted((a, b)=> {
+            // The default sorting algorithm, modified for these specific objects
+            return Number.parseInt(a.price) - Number.parseInt(b.price)
+        })
+        .pop().product                      // pop to get the highest
 
-}. Lowest: ${                           // Just repeat the method
-    products
-    .filter(product => {
-        return product.price > 0;
-    })
-    .toSorted((a, b)=> {
-        return Number.parseInt(a.price) - Number.parseInt(b.price)
-    })
-    .shift().product                    // Shift to get the lowest
-}.`
+    }. Lowest: ${                           // Just repeat the method
+        products
+        .filter(product => {
+            return product.price > 0;
+        })
+        .toSorted((a, b)=> {
+            return Number.parseInt(a.price) - Number.parseInt(b.price)
+        })
+        .shift().product                    // Shift to get the lowest
+    }.`
 );
 
 
