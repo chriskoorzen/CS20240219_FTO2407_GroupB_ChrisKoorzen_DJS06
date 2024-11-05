@@ -63,3 +63,13 @@ console.table(
         return obj;
     }, new Object())
 );
+
+
+
+
+// --------- ADVANCED ----------------
+
+// Log product names
+console.log(
+    products.map(product => product.product)
+);
