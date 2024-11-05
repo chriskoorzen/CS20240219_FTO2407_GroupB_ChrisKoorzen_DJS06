@@ -97,3 +97,9 @@ console.log(
         0                               // Initial Value
     )
 );
+
+
+// Concat product names
+console.log(
+    products.reduce((finalString, product) => finalString += product.product, "")
+);
